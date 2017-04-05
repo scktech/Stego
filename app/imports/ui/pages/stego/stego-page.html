@@ -1,3 +1,41 @@
 <template name="Stego_Page">
-  <button class="ui primary button" type="submit">Submit</button>
+  <div class="ui container">
+    <form class="ui equal width form secret-message">
+      <div class="field">
+        <textarea id="secretMessage"></textarea>
+      </div>
+
+      <div class="ui form">
+        <div class="inline fields">
+          <label>Which Picture do you wish to use?</label>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="frequency" checked="checked">
+              <img class="ui medium rounded image" src="/images/square-image.png">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="frequency">
+              <img class="ui medium rounded image" src="/images/wireframe/square-image.png">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="frequency">
+              <img class="ui medium rounded image" src="/images/wireframe/square-image.png">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="frequency">
+              <img class="ui medium rounded image" src="/images/wireframe/square-image.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="ui primary button secret-message" type="submit" onclick="runStego()">Submit</button>
+    </form>
+  </div>
 </template>
