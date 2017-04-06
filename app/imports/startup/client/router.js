@@ -76,6 +76,14 @@ userRoutes.route('/encrypt', {
   },
 });
 
+export const findPageRouteName = 'Find_Page';
+userRoutes.route('/find', {
+  name: findPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: findPageRouteName });
+  },
+});
+
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {

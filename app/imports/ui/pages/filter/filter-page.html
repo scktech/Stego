@@ -3,10 +3,11 @@
     <div style="margin-top: 10px" class="ui container">
 
       <form class="ui equal width form filter-data-form">
-        <div class="field">
-          {{> Select_Form_Control label="Interests" options=interests multiple=true }}
+        <div class="ui left icon input">
+          <input type="text" placeholder="Search users...">
+          <i class="users icon"></i>
         </div>
-        <button class="ui teal button" type="submit">Filter</button>
+        <button class="ui green button" type="submit">Search</button>
       </form>
 
       {{> Filter_Page_Directory profiles=profiles }}
