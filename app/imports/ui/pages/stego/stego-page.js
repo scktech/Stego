@@ -11,6 +11,6 @@ Template.Stego_Page.events({
   'submit .secret-message': function runStego(event, instance) {
     event.preventDefault();
     var secretMessage = $("#secretMessage").val();
-
+    var picture = $('input[name="painting"]:checked').val();
   }
 });
