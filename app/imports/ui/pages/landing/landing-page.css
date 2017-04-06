@@ -1,5 +1,5 @@
 .ui.vertical.inverted.center.aligned.segment {
-  background: url('images/supps_now_login_page.jpg');
+  background: url('images/background4.jpg') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
 }
