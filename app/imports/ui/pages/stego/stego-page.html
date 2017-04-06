@@ -2,7 +2,7 @@
   <div class="ui container">
     <form class="ui equal width form secret-message">
       <div class="field">
-        <textarea id="secretMessage"></textarea>
+        <textarea id="secretMessage" style="font-size: 20pt;" placeholder="Enter your secret message"></textarea>
       </div>
 
       <div class="ui form">
@@ -12,35 +12,35 @@
           <div class="field">
             <div class="ui radio checkbox">
               <input type="radio" name="painting" value="/images/leonard.jpg" checked="checked">
-              <label><img class="ui medium circular image" src="/images/leonard.jpg"></label>
+              <label> Xlarge <img class="ui medium circular image" src="/images/leonard.jpg"></label>
             </div>
           </div>
 
           <div class="field">
             <div class="ui radio checkbox">
               <input type="radio" name="painting" value="/images/monalisa.png">
-              <label><img class="ui medium circular image" src="/images/monalisa.png"></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="painting" value="/images/StarryNight.png">
-              <label><img class="ui medium circular image" src="/images/StarryNight.png"></label>
+              <label> Large<img class="ui small circular image" src="/images/monalisa.png"></label>
             </div>
           </div>
 
           <div class="field">
             <div class="ui radio checkbox">
               <input type="radio" name="painting" value="/images/VanGogh.jpg">
-              <label><img class="ui medium circular image" src="/images/VanGogh.jpg"></label>
+              <label> Medium<img class="ui small circular image" src="/images/VanGogh.jpg"></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="painting" value="/images/StarryNight.png">
+              <label> Small<img class="ui small circular image" src="/images/StarryNight.png"></label>
             </div>
           </div>
 
         </div>
       </div>
 
-      <button class="ui primary button secret-message" type="submit" onclick="runStego()">Submit</button>
+      <button class="ui primary button secret-message" type="submit" onclick="runStego()">Create Secret Message</button>
     </form>
   </div>
 </template>
