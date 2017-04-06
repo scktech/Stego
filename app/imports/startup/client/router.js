@@ -68,11 +68,11 @@ userRoutes.route('/filter', {
   },
 });
 
-export const stegoPageRouteName = 'Stego_Page';
-userRoutes.route('/stego', {
-  name: stegoPageRouteName,
+export const encryptPageRouteName = 'Encrypt_Page';
+userRoutes.route('/encrypt', {
+  name: encryptPageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: stegoPageRouteName });
+    BlazeLayout.render('User_Layout', { main: encryptPageRouteName });
   },
 });
 
