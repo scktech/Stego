@@ -12,5 +12,11 @@ Template.Encrypt_Page.events({
     event.preventDefault();
     var secretMessage = $("#secretMessage").val();
     var picture = $('input[name="painting"]:checked').val();
+
+    var redSize = 0;
+    var blueSize = 0;
+    var greenSize = 0;
+
+    document.write(secretMessage.length);
   }
 });
