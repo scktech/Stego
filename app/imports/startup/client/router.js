@@ -78,7 +78,7 @@ userRoutes.route('/encrypt', {
 
 export const homePageRouteName = 'Home_Page';
 userRoutes.route('/home', {
-  name: stegoPageRouteName,
+  name: homePageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: homePageRouteName });
   },
