@@ -1,12 +1,13 @@
 <template name="User_Header">
-  <div class="ui top fixed borderless inverted dark gray menu">
-    <a class="{{isActiveRoute "Home_Page"}} item" href="{{pathFor "Home_Page" username=routeUserName}}"><h1>UH Stego</h1></a>
-    <div class="ui middle container">
-      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a>
-      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Find User</a>
-      <a class="{{isActiveRoute "Encrypt_Page"}} item" href="{{pathFor "Encrypt_Page" username=routeUserName}}">Encrypt</a>
-      <a class="{{isActiveRoute "Decrypt_Page"}} item" href="{{pathFor "Decrypt_Page" username=routeUserName}}">Decrypt</a>
+  <head>
+    <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
+  </head>
+  <div class="ui fluid top fixed borderless inverted dark gray menu" style="font-family: Lato">
+    <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">PROFILE</a>
+    <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">FIND USER</a>
+    <a class="{{isActiveRoute "Encrypt_Page"}} item" href="{{pathFor "Encrypt_Page" username=routeUserName}}">ENCRYPT</a>
+    <a class="{{isActiveRoute "Decrypt_Page"}} item" href="{{pathFor "Decrypt_Page" username=routeUserName}}">DECRYPT</a>
+      <div class="middle aligned item"><a style="text-align: center; margin-left: 16em;" class="{{isActiveRoute "Home_Page"}} item" href="{{pathFor "Home_Page" username=routeUserName}}"><h1>UH STEGO</h1></a></div>
       <div class="right aligned item">{{> Cas_Login }}</div>
-    </div>
   </div>
 </template>

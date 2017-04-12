@@ -1,8 +1,13 @@
 <template name="Landing_Page">
-  <div class="ui vertical inverted center aligned segment" >
-    <div style = "margin-top: 20em;" class = "ui centered text container">
+  <head>
+  <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
+  </head>
+
+  <div class="ui vertical inverted center aligned landing segment" >
+    <div style = "margin-top: 20em; " class = "ui centered text container">
       <!--<img class="ui fluid image cas-login" src="/images/Brotein_Banner.png">-->
-      <h1 style="font-size: 5em">UH STEGO</h1>
+      <h1 style="font-size: 5em; font-family: 'Lato';">UH STEGO</h1>
+      <div class="ui text container" style="font-family: 'Open Sans'; font-size: 2.5rem; font-style: italic">Hide in plain sight</div>
       <div style = "margin-top: 2em;" class="text container">
         {{> Cas_Login size="huge"}}
       </div>

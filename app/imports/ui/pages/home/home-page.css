@@ -1,12 +1,15 @@
 .ui.vertical.inverted.center.aligned.segment {
   /*background: url('../images/background4.jpg') no-repeat center center fixed;*/
-  background: url('../images/background4.jpg') no-repeat center center;
+  background: url('../images/background5.jpg') no-repeat center center;
   background-size: cover;
-  /*
-  background-attachment: fixed;
-  */
-  min-height: 100vh;
+
 }
 
-
+.text.box{
+  background: rgba(255,255,255,0.2);
+  padding:15px 30px;
+  display: inline-block;
+  text-shadow: 0 0 30px #000;
+  color: #fff;
+}
 
