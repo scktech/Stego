@@ -2,7 +2,6 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { $ } from 'meteor/jquery';
 
-
 /*                        LANDING ROUTE                       */
 
 export const landingPageRouteName = 'Landing_Page';
@@ -33,9 +32,7 @@ FlowRouter.route('/directory', {
   triggersExit: [removeDirectoryBodyClass],
 });
 
-
 /*                        USER ROUTES                      */
-
 
 function addUserBodyClass() {
   $('body').addClass('user-layout-body');
@@ -76,19 +73,19 @@ userRoutes.route('/encrypt', {
   },
 });
 
-<<<<<<< HEAD
 export const homePageRouteName = 'Home_Page';
 userRoutes.route('/home', {
   name: homePageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: homePageRouteName });
-=======
+  },
+});
+
 export const findPageRouteName = 'Find_Page';
 userRoutes.route('/find', {
   name: findPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: findPageRouteName });
->>>>>>> origin/update-profile-page
   },
 });
 
