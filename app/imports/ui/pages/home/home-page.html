@@ -1,9 +1,18 @@
 <template name="Home_Page">
   {{#if Template.subscriptionsReady}}
-  <!--<img class="ui fluid image" src="../images/background4.jpg">-->
+  <head>
+    <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
+  </head>
   <div class="ui vertical inverted center aligned segment">
-    <div class="ui text container">
-      <h1 style="text-align: center; margin-top: 5em; font-size: 4em">Welcome</h1>
+    <div class="ui centered grid" style="margin-top: 250px">
+      <div class="row">
+       <div class="text box"> <h1 style="text-align: center; font-size: 3em; font-family: Lato;">
+        HIDE IN PLAIN SIGHT</h1>
+        <p style="text-align: center; margin-top 7em; font-size:1.5em; width: 600px; font-family: Open Sans;">
+          We believe in privacy. UH Stego hides your text message in an image of your choice without changing its
+          appearance. To reveal the secret message, simply upload the image to the decrypt page and hit “decrypt”.
+        </p></div>
+      </div>
     </div>
   </div>
   {{/if}}

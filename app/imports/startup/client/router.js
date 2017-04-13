@@ -2,7 +2,6 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { $ } from 'meteor/jquery';
 
-
 /*                        LANDING ROUTE                       */
 
 export const landingPageRouteName = 'Landing_Page';
@@ -33,9 +32,7 @@ FlowRouter.route('/directory', {
   triggersExit: [removeDirectoryBodyClass],
 });
 
-
 /*                        USER ROUTES                      */
-
 
 function addUserBodyClass() {
   $('body').addClass('user-layout-body');
@@ -84,6 +81,7 @@ userRoutes.route('/home', {
   },
 });
 
+<<<<<<< HEAD
 export const decryptPageRouteName = 'Decrypt_Page';
 userRoutes.route('/decrypt', {
   name: decryptPageRouteName,
@@ -92,6 +90,8 @@ userRoutes.route('/decrypt', {
   },
 });
 
+=======
+>>>>>>> Menu-Bar
 export const findPageRouteName = 'Find_Page';
 userRoutes.route('/find', {
   name: findPageRouteName,
