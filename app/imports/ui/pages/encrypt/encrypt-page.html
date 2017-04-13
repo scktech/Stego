@@ -5,43 +5,22 @@
         <textarea id="secretMessage" style="font-size: 20pt;" placeholder="Enter your secret message"></textarea>
       </div>
 
-      <div class="ui form">
-        <div class="inline fields">
-          <label>Which Picture do you wish to use?</label>
 
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="painting" value="/images/leonard.jpg" checked="checked">
-              <label> Xlarge <img class="ui medium circular image" src="/images/leonard.jpg"></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="painting" value="/images/monalisa.png">
-              <label> Large<img class="ui small circular image" src="/images/monalisa.png"></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="painting" value="/images/VanGogh.jpg">
-              <label> Medium<img class="ui small circular image" src="/images/VanGogh.jpg"></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="painting" value="/images/StarryNight.png">
-              <label> Small<img class="ui small circular image" src="/images/StarryNight.png"></label>
-            </div>
-          </div>
-
-        </div>
+      <div class="ui container center aligned">
+        <!-- <label for="file-upload" class="custom-file-upload">
+          Select Image
+        </label> -->
+        <input type="file"/>
       </div>
 
-      <button class="ui primary button secret-message" type="submit" onclick="runStego()">Create Secret Message</button>
-
+      <div class="ui segment">
+        <div class="ui container center aligned">
+          <img id="uploadedPic" src=" "/>
+        </div>
+      </div>
+      <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
     </form>
   </div>
 </template>
+
+

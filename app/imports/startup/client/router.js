@@ -76,19 +76,27 @@ userRoutes.route('/encrypt', {
   },
 });
 
-<<<<<<< HEAD
 export const homePageRouteName = 'Home_Page';
 userRoutes.route('/home', {
   name: homePageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: homePageRouteName });
-=======
+  },
+});
+
+export const decryptPageRouteName = 'Decrypt_Page';
+userRoutes.route('/decrypt', {
+  name: decryptPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: decryptPageRouteName });
+  },
+});
+
 export const findPageRouteName = 'Find_Page';
 userRoutes.route('/find', {
   name: findPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: findPageRouteName });
->>>>>>> origin/update-profile-page
   },
 });
 

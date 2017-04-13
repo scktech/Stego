@@ -1,4 +1,25 @@
-.ui.small.circular.image {
-  height: 100px;
-  width: 100px;
+.ui.primary.button.secret-message {
+  margin-top: 10pt;
+  background-color: black;
+  text: white;
 }
+
+.ui.segment {
+  min-height: 50pt;
+}
+
+/*
+
+input[type="file"] {
+  display: none;
+}
+*/
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
