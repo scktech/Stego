@@ -1,8 +1,7 @@
 .ui.vertical.inverted.center.aligned.segment {
-  /*background: url('../images/background4.jpg') no-repeat center center fixed;*/
   background: url('../images/background5.jpg') no-repeat center center;
   background-size: cover;
-
+  min-height: 100vh;
 }
 
 .text.box{
