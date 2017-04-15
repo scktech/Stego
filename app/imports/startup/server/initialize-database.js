@@ -12,15 +12,13 @@ import { _ } from 'meteor/underscore';
  * @param restoreJSON The restore file contents.
  * @param collection The collection of interest.
  */
+
+/*************
 function getDefinitions(restoreJSON, collection) {
   return _.find(restoreJSON.collections, obj => obj.name === collection).contents;
 }
 
-/**
- * Given a collection and the restoreJSON structure, looks up the definitions and invokes define() on them.
- * @param collection The collection to be restored.
- * @param restoreJSON The structure containing all of the definitions.
- */
+
 function restoreCollection(collection, restoreJSON) {
   const definitions = getDefinitions(restoreJSON, collection._collectionName);
   console.log(`Defining ${definitions.length} ${collection._collectionName} documents.`);
@@ -28,7 +26,7 @@ function restoreCollection(collection, restoreJSON) {
 }
 
 Meteor.startup(() => {
-  /** Only initialize database if it's empty. */
+
   const collectionList = [Interests, Profiles];
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
     return memo + collection.count();
@@ -42,3 +40,4 @@ Meteor.startup(() => {
     });
   }
 });
+************/
