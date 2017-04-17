@@ -1,12 +1,24 @@
 <template name="Encrypt_Page">
+
+  {{#if Template.subscriptionsReady}}
+
   <div class="ui container">
+
+    <form class="ui equal width form secret-message {{ successClass }} {{ errorClass }}">
+      <div style="margin-top: 5pt;" class="fields">
+        <input type="text" id="recipient" placeholder="Recipient Username">
+        <input type="text" id="secretKey" placeholder="Encryption Key">
+      </div>
+    </form>
+
+
     <form class="ui equal width form secret-message">
       <div class="field">
         <textarea id="secretMessage" style="font-size: 20pt;" placeholder="Enter your secret message"></textarea>
       </div>
 
 
-      <div class="ui container center aligned">
+      <div class="ui container center aligned secret-message">
         <!-- <label for="file-upload" class="custom-file-upload">
           Select Image
         </label> -->
@@ -21,6 +33,8 @@
       <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
     </form>
   </div>
-</template>
 
+  {{/if}}
+
+</template>
 
