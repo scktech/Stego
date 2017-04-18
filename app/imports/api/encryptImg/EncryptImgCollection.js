@@ -37,11 +37,12 @@ class EncryptImgCollection extends BaseCollection {
    * if one or more keys are not defined.
    * @returns The newly created docID.
    */
-  define({ sendTo='', username='', picture = '' }) {
+  define({ sendTo='', username='', picture ='' }) {
     // make sure required fields are OK.
     const checkPattern = { sendTo: String, username: String, picture: SimpleSchema.RegEx.Url };
     check({ sendTo, username, picture }, checkPattern);
 
+    return this._collection.insert({ sendTo, username, picture });
   }
 
   /**

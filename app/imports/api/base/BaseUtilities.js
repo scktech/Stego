@@ -5,5 +5,5 @@ import { Encrypts } from '/imports/api/encryptImg/EncryptImgCollection';
 export function removeAllEntities() {
   Profiles.removeAll();
   Interests.removeAll();
-  //Encrypts.removeAll();
+  Encrypts.removeAll();
 }
