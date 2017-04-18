@@ -7,7 +7,9 @@
     <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">FIND USER</a>
     <a class="{{isActiveRoute "Encrypt_Page"}} item" href="{{pathFor "Encrypt_Page" username=routeUserName}}">ENCRYPT</a>
     <a class="{{isActiveRoute "Decrypt_Page"}} item" href="{{pathFor "Decrypt_Page" username=routeUserName}}">DECRYPT</a>
-      <div class="middle aligned item"><a style="text-align: center; margin-left: 16em; padding-top: 0; padding-bottom: 0" class="{{isActiveRoute "Home_Page"}} item" href="{{pathFor "Home_Page" username=routeUserName}}"><h1>UH STEGO</h1></a></div>
+      <div class="ui middle aligned menu item" style="width: 47%; padding-top: 0; padding-bottom: 0">
+        <a class="{{isActiveRoute "Home_Page"}} item" href="{{pathFor "Home_Page" username=routeUserName}}"><h1>UH STEGO</h1></a>
+      </div>
       <div class="right aligned item">{{> Cas_Login }}</div>
   </div>
 </template>
