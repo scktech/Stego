@@ -81,7 +81,6 @@ userRoutes.route('/home', {
   },
 });
 
-<<<<<<< HEAD
 export const decryptPageRouteName = 'Decrypt_Page';
 userRoutes.route('/decrypt', {
   name: decryptPageRouteName,
@@ -90,8 +89,6 @@ userRoutes.route('/decrypt', {
   },
 });
 
-=======
->>>>>>> Menu-Bar
 export const findPageRouteName = 'Find_Page';
 userRoutes.route('/find', {
   name: findPageRouteName,

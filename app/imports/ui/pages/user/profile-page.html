@@ -1,6 +1,6 @@
 <template name="Profile_Page">
 
-{{#if Template.subscriptionsReady}}
+  {{#if Template.subscriptionsReady}}
 
   <div class="ui text container segment">
     <div class="ui dividing header">
@@ -9,24 +9,28 @@
     <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
 
       <div class="fields">
-        {{> Text_Form_Control label="First Name" placeholder="First Name" value=profile.firstName errorMessage=(fieldError "firstName")}}
-        {{> Text_Form_Control label="Last Name" placeholder="Last Name" value=profile.lastName errorMessage=(fieldError "lastName")}}
+        {{> Text_Form_Control label="First" placeholder="First Name" value=profile.firstName errorMessage=(fieldError
+        "firstName")}}
+        {{> Text_Form_Control label="Last" placeholder="Last Name" value=profile.lastName errorMessage=(fieldError
+        "lastName")}}
 
       </div>
 
       <div class="field">
-        {{> Text_Form_Control label="Affiliation" placeholder="Student" value=profile.title errorMessage=(fieldError "title")}}
-        {{> Text_Form_Control label="Profile Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
+        {{> Text_Form_Control label="Title" placeholder="Student" value=profile.title errorMessage=(fieldError
+        "title")}}
+        {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture
+        errorMessage=(fieldError "picture")}}
       </div>
 
-      {{> TextArea_Form_Control label="About You" value=profile.bio placeholder="Hello..." errorMessage=(fieldError "bio")}}
+      {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Hello..." errorMessage=(fieldError "bio")}}
 
 
-      <button class="ui primary button" type="submit">Submit</button>
+      <button class="ui green button" type="submit">Submit</button>
       {{#if displaySuccessMessage}}
-        <div class="ui success message">
-          <p>Profile data successfully updated.</p>
-        </div>
+      <div class="ui success message">
+        <p>Profile data successfully updated.</p>
+      </div>
       {{/if}}
     </form>
   </div>
