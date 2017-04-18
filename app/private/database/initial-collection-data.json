@@ -120,6 +120,26 @@
           "picture": "https://kknikk.github.io/images/temp-profile.jpg"
         }
       ]
+    },
+    {
+      "name": "EncryptImgCollection",
+      "contents": [
+        {
+          "sendTo": "Sam",
+          "username": "Rasay",
+          "picture": "https://samrasay.github.io/images/sam.jpg"
+        },
+        {
+          "sendTo": "Connor",
+          "username": "Slike",
+          "picture": "https://connorslike.github.io/images/crop.png"
+        },
+        {
+          "sendTo": "Kurt",
+          "username": "Nikaitani",
+          "picture": "https://kknikk.github.io/images/temp-profile.jpg"
+        }
+      ]
     }
   ]
 }

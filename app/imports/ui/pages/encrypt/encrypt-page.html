@@ -31,6 +31,13 @@
         </div>
       </div>
       <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
+
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Encrypt data successfully uploaded.</p>
+      </div>
+      {{/if}}
+
     </form>
   </div>
 

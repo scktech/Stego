@@ -19,7 +19,7 @@ class EncryptImgCollection extends BaseCollection {
       sendTo: { type: String},
       // Remainder are optional
       username: { type: String, optional: true},
-      picture: { type: String, optional: true },
+      picture: { type: SimpleSchema.RegEx.Url, optional: true },
     }));
   }
 
@@ -61,4 +61,4 @@ class EncryptImgCollection extends BaseCollection {
 /**
  * Provides the singleton instance of this class to all other entities.
  */
-export const EncryptImg = new EncryptImgCollection();
+export const Encrypts = new EncryptImgCollection();

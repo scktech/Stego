@@ -2,17 +2,17 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import { EncryptImg } from '/imports/api/encryptImg/EncryptImgCollection';
+import { Encrypts } from '/imports/api/encryptImg/EncryptImgCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Encrypt_Page.onCreated(function onCreated() {
-  this.subscribe(EncryptImg.getPublicationName());
+  this.subscribe(Encrypts.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = EncryptImg.getSchema().namedContext('Encrypt_Page');
+  this.context = Encrypts.getSchema().namedContext('Encrypt_Page');
 });
 
 
@@ -36,7 +36,6 @@ Template.Encrypt_Page.helpers({
 
 Template.Encrypt_Page.events({
 
-
   'submit .secret-message': function runStego(event, instance) {
     event.preventDefault();
     let secretMessage = $("#secretMessage").val();
@@ -57,27 +56,32 @@ Template.Encrypt_Page.events({
       }
     }
 
+    // Clear out any old validation errors.
+    //instance.context.resetValidation();
+    // Invoke clean so that updatedProfileData reflects what will be inserted.
+    //Encrypts.getSchema().clean(updatedEncryptImg);
+    // Determine validity.
+    //instance.context.validate(updatedEncryptImg);
+
+      const docID = username;//Encrypts.findDoc(FlowRouter.getParam('username'))._id;
+      const id = Encrypts.update(docID, { $set: updatedEncryptImg });
+
     //document.write(binarySecretMessage);
     //document.write(username);
-    //document.write(sendTo);
+    document.write(docID);
     //document.write(updatedEncryptImg);
 
-    // Clear out any old validation errors.
-    instance.context.resetValidation();
-    // Invoke clean so that updatedProfileData reflects what will be inserted.
-    EncryptImg.getSchema().clean(updatedEncryptImg);
-    // Determine validity.
-    instance.context.validate(updatedEncryptImg);
-
+/**
     if (instance.context.isValid()) {
-      const docID = EncryptImg.findDoc(FlowRouter.getParam('username'))._id;
-      const id = EncryptImg.update(docID, { $set: updatedEncryptImg });
+      const docID = Encrypts.findDoc(FlowRouter.getParam('username'))._id;
+      const id = Encrypts.update(docID, { $set: updatedEncryptImg });
       instance.messageFlags.set(displaySuccessMessage, id);
       instance.messageFlags.set(displayErrorMessages, false);
     } else {
       instance.messageFlags.set(displaySuccessMessage, false);
       instance.messageFlags.set(displayErrorMessages, true);
     }
+    **/
   },
 });
 
