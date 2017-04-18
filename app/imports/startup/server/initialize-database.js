@@ -13,7 +13,6 @@ import { _ } from 'meteor/underscore';
  * @param collection The collection of interest.
  */
 
-/*************
 function getDefinitions(restoreJSON, collection) {
   return _.find(restoreJSON.collections, obj => obj.name === collection).contents;
 }
@@ -26,7 +25,6 @@ function restoreCollection(collection, restoreJSON) {
 }
 
 Meteor.startup(() => {
-
   const collectionList = [Interests, Profiles];
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
     return memo + collection.count();
@@ -40,4 +38,4 @@ Meteor.startup(() => {
     });
   }
 });
-************/
+
