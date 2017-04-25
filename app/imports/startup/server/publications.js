@@ -4,4 +4,4 @@ import { Encrypts } from '/imports/api/encryptImg/EncryptImgCollection';
 
 Interests.publish();
 Profiles.publish();
-Encrypts.publish();
+//Encrypts.publish();

@@ -1,5 +1,6 @@
 <template name="Encrypt_Page">
 
+  {{#if Template.subscriptionsReady}}
 
   <div class="ui container">
 
@@ -18,6 +19,9 @@
 
 
       <div class="ui container center aligned secret-message">
+        <!-- <label for="file-upload" class="custom-file-upload">
+          Select Image
+        </label> -->
         <input type="file"/>
       </div>
 
@@ -28,8 +32,16 @@
       </div>
       <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
 
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Encrypt data successfully uploaded.</p>
+      </div>
+      {{/if}}
+
     </form>
   </div>
+
+  {{/if}}
 
 </template>
 

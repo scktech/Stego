@@ -28,7 +28,7 @@ function restoreCollection(collection, restoreJSON) {
 
 Meteor.startup(() => {
 
-  const collectionList = [Interests, Profiles, Encrypts];
+  const collectionList = [Interests, Profiles];
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
     return memo + collection.count();
   }, 0);
