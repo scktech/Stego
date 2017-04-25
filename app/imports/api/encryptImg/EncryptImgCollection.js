@@ -9,19 +9,19 @@ export const EncryptedImages = new Mongo.Collection('EncryptedImages');
  * Create the schema for Stuff
  */
 export const EncryptedImagesSchema = new SimpleSchema({
-  event: {
+  to: {
     label: 'to',
     type: String,
     optional: false,
     max: 20,
   },
-  date: {
+  from: {
     label: 'from',
     type: String,
     optional: false,
     max: 20,
   },
-  location: {
+  image: {
     label: 'image',
     type: String,
     optional: false,

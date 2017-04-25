@@ -8,7 +8,7 @@ import { EncryptedImages, EncryptedImagesSchema } from '/imports/api/encryptImg/
 Template.Encrypt_Page.helpers({
 
   events: function(){
-    return ListOfEvents.find();
+    return EncryptedImages.find();
   },
 
 });
