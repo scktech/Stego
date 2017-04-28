@@ -7,10 +7,6 @@ import { EncryptedImages, EncryptedImagesSchema } from '/imports/api/encryptImg/
 
 Template.Encrypt_Page.helpers({
 
-  events: function(){
-    return EncryptedImages.find();
-  },
-
 });
 
 Template.Encrypt_Page.events({
@@ -22,8 +18,7 @@ Template.Encrypt_Page.events({
     const username = FlowRouter.getParam('username');
     const sendTo = $("#recipient").val();
     const key = $("#secretKey").val();
-    const picture = '';//event.target.Picture.value;
-    //const updatedEncryptImg = { sendTo, username, picture };
+    const picture = "hello";//event.target.Picture.value;
     let binarySecretMessage = 0;
 
     const newEncryptImg = { sendTo, username, picture };
@@ -36,13 +31,9 @@ Template.Encrypt_Page.events({
       }
     }
 
-
     EncryptedImages.insert(newEncryptImg);
 
-    //document.write(binarySecretMessage);
-    //document.write(username);
-    document.write(docID);
-    //document.write(updatedEncryptImg);
+    document.write(username);
 
   },
 });
