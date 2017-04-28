@@ -1,5 +1,6 @@
 <template name="Encrypt_Page">
 
+  {{#if Template.subscriptionsReady}}
 
   <div class="ui container">
 
@@ -13,11 +14,14 @@
 
     <form class="ui equal width form secret-message">
       <div class="field">
-        <textarea id="secretMessage" placeholder="Enter your secret message"></textarea>
+        <textarea id="secretMessage" style="font-size: 20pt;" placeholder="Enter your secret message"></textarea>
       </div>
 
 
       <div class="ui container center aligned secret-message">
+        <!-- <label for="file-upload" class="custom-file-upload">
+          Select Image
+        </label> -->
         <input type="file"/>
       </div>
 
@@ -26,12 +30,18 @@
           <img id="uploadedPic" src=" "/>
         </div>
       </div>
-      <button class="ui green button secret-message" type="submit">Create Secret Message</button>
       <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
 
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Encrypt data successfully uploaded.</p>
+      </div>
+      {{/if}}
 
     </form>
   </div>
+
+  {{/if}}
 
 </template>
 
