@@ -13,7 +13,7 @@ Template.Encrypt_Page.events({
 
   'submit .secret-message': function runStego(event, instance) {
     event.preventDefault();
-    const eventId = event.target.eventId.value;
+    //const eventId = event.target.eventId.value;
     let secretMessage = $("#secretMessage").val();
     const username = FlowRouter.getParam('username');
     const sendTo = $("#recipient").val();
@@ -33,7 +33,7 @@ Template.Encrypt_Page.events({
 
     EncryptedImages.insert(newEncryptImg);
 
-    document.write(username);
+    document.write("helllo");
 
   },
 });
