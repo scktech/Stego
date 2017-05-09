@@ -1,11 +1,8 @@
 <template name="Encrypt_Page">
-
-
   <div class="ui container">
 
     <form class="ui equal width form secret-message {{ successClass }} {{ errorClass }}">
       <div style="margin-top: 5pt;" class="fields">
-        <input type="text" id="recipient" placeholder="Recipient Username">
         <input type="text" id="secretKey" placeholder="Encryption Key">
       </div>
     </form>
@@ -18,17 +15,22 @@
 
 
       <div class="ui container center aligned secret-message">
-        <input type="file"/>
+        <input type="file" id="uploadedImage" name="uploadedImage"/>
       </div>
 
-      <div class="ui segment">
-        <div class="ui container center aligned">
-          <img id="uploadedPic" src=" "/>
+        <div class="ui two column grid secret-message" style="margin-top: 10px;">
+          <div class="column">
+            <div class="ui segment">
+              <img id="uploadedPic" style="min-height: 111pt;"/>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui segment">
+              <canvas id="editedPic"></canvas>
+            </div>
+          </div>
         </div>
-      </div>
       <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
-
-
     </form>
   </div>
 
