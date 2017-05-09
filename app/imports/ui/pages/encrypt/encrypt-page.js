@@ -11,14 +11,35 @@ Template.Encrypt_Page.helpers({
 
 Template.Encrypt_Page.events({
 
+  // display selected image
+  'change .upload-pic': function (event) {
+    event.preventDefault();
+
+    function showImage(src,target) {
+      var fr=new FileReader();
+      // when image is loaded, set the src of the image where you want to display it
+      fr.onload = function(e) { target.src = this.result; };
+      src.addEventListener("change",function() {
+        // fill fr with image data
+        fr.readAsDataURL(src.files[0]);
+      });
+    }
+
+    var src = document.getElementById("src");
+    var target = document.getElementById("target");
+    showImage(src,target);
+
+  },
+
+
   'submit .secret-message': function runStego(event, instance) {
     event.preventDefault();
     const eventId = event.target.eventId.value;
-    let secretMessage = $("#secretMessage").val();
+    const secretMessage = $('#secretMessage').val();
     const username = FlowRouter.getParam('username');
-    const sendTo = $("#recipient").val();
+    const sendTo = $('#recipient').val();
     const key = $("#secretKey").val();
-    const picture = "hello";//event.target.Picture.value;
+    const picture = document.getElementById('src'); // event.target.Picture.value;
     let binarySecretMessage = 0;
 
     const newEncryptImg = { sendTo, username, picture };
@@ -36,5 +57,6 @@ Template.Encrypt_Page.events({
     document.write(username);
 
   },
+
 });
 

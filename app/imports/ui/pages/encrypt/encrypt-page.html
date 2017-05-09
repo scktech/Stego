@@ -4,7 +4,7 @@
   <div class="ui container">
 
     <form class="ui equal width form secret-message {{ successClass }} {{ errorClass }}">
-      <div style="margin-top: 5pt;" class="fields">
+      <div style="margin-top: 20px;" class="fields">
         <input type="text" id="recipient" placeholder="Recipient Username">
         <input type="text" id="secretKey" placeholder="Encryption Key">
       </div>
@@ -17,13 +17,15 @@
       </div>
 
 
-      <div class="ui container center aligned secret-message">
-        <input type="file"/>
+      <div class="ui container center aligned upload-pic">
+        <input id="src" type='file' />
+        <img id="target" style="height: 250px; width: 250px"/>
+
+
       </div>
 
       <div class="ui segment">
         <div class="ui container center aligned">
-          <img id="uploadedPic" src=" "/>
         </div>
       </div>
       <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
