@@ -2,48 +2,66 @@
   {{#if Template.subscriptionsReady}}
 
   <div style="margin-top: 90px; min-height: 500px" class="ui centered container">
-    <div class="ui header">Hello {{ first }}</div>
+    <h1 class="ui header">Hello {{ profile.username }}!</h1>
 
     <div class="ui two column grid">
 
       <div class="twelve wide stretched column">
         <div class="ui segment">
-          <form class="ui form edit-profile">
+          <form class="ui form">
+
             <div class="field">
               <label>Name</label>
               <div class="two fields">
                 <div class="field">
-                  <p>{{profile.firstName}} {{lastName}}</p>
+                  <label>First Name</label>
+                  <p>{{profile.firstName}}</p>
+                </div>
+                <div class="field">
+                  <label>Last Name</label>
+                  <p>{{profile.lastName}}</p>
                 </div>
               </div>
             </div>
-            <div class="field">
 
+            <div class="field">
               <div class="two fields">
                 <div class="field">
-                  <label>Telephone</label>
-                  <p>{{telephone}}</p>
+                  <label>Major</label>
+                  <p>{{profile.title}}</p>
                 </div>
                 <div class="field">
                   <label>Email</label>
-                  <p>{{email}}</p>
+                  <p>{{profile.username}}@hawaii.edu</p>
                 </div>
               </div>
             </div>
-            <div class="field">
-              <label>Motto</label>
-              <p>{{motto}}</p>
-            </div>
-            <div class="field">
-              <label>Miscellaneous</label>
-              <p>{{miscellaneous}}</p>
-            </div>
 
-            <img class="right floated mini ui image" src="{{ profile.picture }}">
+            <div class="field">
+              <label>Bio</label>
+              <p>{{profile.bio}}</p>
+            </div>
           </form>
         </div>
       </div>
+
+    <div class="four wide column">
+
+      <div class="ui right card">
+        <img class="ui fluid medium rounded image" src="{{profile.picture}}">
+      </div>
+
+      <div class="ui segment">
+        <div class="ui secondary vertical menu">
+          <a class="item" href="{{pathFor "Profile_Page" username=routeUserName}}">Edit Profile</a>
+          <a class="item" href="{{ pathFor "Encrypt_Page" username=routeUserName}}">Encrypt a Message</a>
+          <a class="item" href="{{ pathFor "Decrypt_Page" username=routeUserName}}">Decrypt a Message</a>
+        </div>
+      </div>
     </div>
+
   </div>
+  </div>
+
   {{/if}}
 </template>
