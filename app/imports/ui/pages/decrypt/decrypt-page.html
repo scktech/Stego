@@ -1,24 +1,24 @@
 <template name="Decrypt_Page">
   <div class="ui container">
-
-    <form class="ui equal width form secret-message {{ successClass }} {{ errorClass }}">
-      <div style="margin-top: 5pt;" class="fields">
-        <input type="text" id="secretKey" placeholder="Encryption Key">
-      </div>
-    </form>
-
-
     <form class="ui equal width form secret-message">
-      <div class="field">
-        <textarea id="secretMessage" placeholder="Enter your secret message"></textarea>
+      <div class="ui container center aligned secret-message">
+        <input type="file" id="uploadedImage" name="uploadedImage" style="margin-top: 10pt;"/>
       </div>
-
-
-      <button class="ui primary button secret-message" type="submit">Create Secret Message</button>
-
-
+      <div class="ui two column grid secret-message" style="margin-top: 10px;">
+        <div class="column">
+          <div class="ui segment">
+            <canvas id="editedPic"></canvas>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui segment" style="min-height: 138pt">
+            <p id="sender"></p>
+            <p id="message"></p>
+          </div>
+        </div>
+      </div>
+      <button class="ui primary button secret-message" type="submit">Decrypt Secret Message</button>
     </form>
   </div>
-
 </template>
 

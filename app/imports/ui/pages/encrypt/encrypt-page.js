@@ -3,9 +3,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 
-Template.Encrypt_Page.helpers({
-
-});
+Template.Encrypt_Page.helpers({});
 
 Template.Encrypt_Page.events({
 
@@ -13,28 +11,11 @@ Template.Encrypt_Page.events({
     event.preventDefault();
     const secretMessage = $('#secretMessage').val();
     const username = FlowRouter.getParam('username');
-    const key = $('#secretKey').val();
-    let keyArray = [];
     let binaryMessage = [];
     let binaryUsername = [];
     let encryptedMessage = '';
     let encryptedUsername = '';
-    let totalPixles = 0;
-    let totalPixlesString = '';
-    let totalPixlesBinary = '';
 
-    /** *******************************************
-     * calculate total pixels to be used
-     *********************************************/
-    totalPixles = 50 + (secretMessage.length * 3);
-    totalPixlesString = totalPixles.toString();
-    for (let i = 0; i < totalPixlesString.length; i++) {
-      if (totalPixlesBinary === '') {
-        totalPixlesBinary = totalPixlesString[i].charCodeAt(0).toString(2);
-      } else {
-        totalPixlesBinary += totalPixlesString[i].charCodeAt(0).toString(2);
-      }
-    }
     /** *******************************************
      * Turning message into a binary array
      * prepping for encryption phase.
@@ -42,8 +23,8 @@ Template.Encrypt_Page.events({
     for (let i = 0; i < secretMessage.length; i++) {
       /* getting binary to length of 7*/
       let fixLength = secretMessage[i].charCodeAt(0).toString(2);
-      if (fixLength.length !== 7) {
-        while (fixLength.length !== 7) {
+      if (fixLength.length !== 9) {
+        while (fixLength.length !== 9) {
           fixLength = '0' + fixLength;
         }
       }
@@ -57,78 +38,19 @@ Template.Encrypt_Page.events({
     for (let i = 0; i < username.length; i++) {
       /* getting binary to length of 7*/
       let fixLength = username[i].charCodeAt(0).toString(2);
-      if (fixLength.length !== 7) {
-        while (fixLength.length !== 7) {
+      if (fixLength.length !== 9) {
+        while (fixLength.length !== 9) {
           fixLength = '0' + fixLength;
         }
       }
       /* creating binary string */
       binaryUsername.push(fixLength);
     }
-    /** *******************************************
-     * Turning the key into a binary array, prepping
-     * for encryption phase.
-     *********************************************/
-    if (key !== '') {
-      for (let i = 0; i < key.length; i++) {
-        let fixLength = key[i].charCodeAt(0).toString(2);
-        if (fixLength.length !== 7) {
-          while (fixLength.length !== 7) {
-            fixLength = '0' + fixLength;
-          }
-        }
-        keyArray.push(fixLength);
-      }
-    }
-    /** *******************************************
-     * If user entered an encryption key this block
-     * will encrypt the username and the message.
-     *********************************************/
-    if (key !== '') {
-      for (let i = 0; i < binaryMessage.length; i++) {
-        for (let j = 0; j < 7; j++) {
-          if (binaryMessage[i][j] === '1') {
-            if (encryptedMessage === '') {
-              encryptedMessage = '0';
-            } else {
-              encryptedMessage += '0';
-            }
-          } else {
-            if (encryptedMessage === '') {
-              encryptedMessage = '1';
-            } else {
-              encryptedMessage += '1';
-            }
-          }
-        }
-      }
 
-      for (let i = 0; i < binaryUsername.length; i++) {
-        for (let j = 0; j < 7; j++) {
-          if (binaryUsername[i][j] === '1') {
-            if (encryptedUsername === '') {
-              encryptedUsername = '0';
-            } else {
-              encryptedUsername += '0';
-            }
-          } else {
-            if (encryptedUsername === '') {
-              encryptedUsername = '1';
-            } else {
-              encryptedUsername += '1';
-            }
-          }
-        }
-      }
-    }
     /** *******************************************
      *encoding the secret message into the image
      *********************************************/
-   /*
-    let img = new Image();
-    img.src = document.getElementById('uploadedImage');
 
-*/
     let input;
     let file;
     let fr;
@@ -148,17 +70,17 @@ Template.Encrypt_Page.events({
     }
 
     function imageLoaded() {
-      var canvas = document.getElementById("editedPic")
+      var canvas = document.getElementById('editedPic')
       canvas.width = img.width;
       canvas.height = img.height;
       var ctx = canvas.getContext("2d");
-      ctx.drawImage(img,0,0);
+      ctx.drawImage(img, 0, 0);
 
       var imgd = ctx.getImageData(0, 0, canvas.width, canvas.height);
       var pix = imgd.data;
 
       // set all ends to 0
-      for (let i = 0, n = (totalPixles * 4); i < n; i += 4) {
+      for (let i = 0, n = pix.length; i < n; i += 4) {
         let string1 = pix[i].toString();
         let string2 = pix[i + 1].toString();
         let string3 = pix[i + 2].toString();
@@ -175,37 +97,79 @@ Template.Encrypt_Page.events({
         // i+3 is alpha (the fourth element)
       }
 
-      // first 20 pixles are for informing function for total
-      for (let i = 40, n = 0; i > n; i -= 4) {
-        pix[i] = 255 - pix[i  ]; // blue
-        pix[i - 1] = 255 - pix[i  ]; // green
-        pix[i - 2] = 255 - pix[i  ]; // red
-        // i+3 is alpha (the fourth element)
+      let usernameString = '';
+      for (let k = 0; k < binaryUsername.length; k++) {
+        for (let j = 0; j < 9; j++) {
+          if (usernameString === '') {
+            usernameString = binaryUsername[k][j];
+          } else {
+            usernameString += binaryUsername[k][j];
+          }
+        }
       }
-      /*
-      // next 20 pixles are for key if any
-      for (let i = 40, n = 120; i < n; i += 4) {
-        pix[i  ] = 255 - pix[i  ]; // red
-        pix[i+1] = 255 - pix[i+1]; // green
-        pix[i+2] = 255 - pix[i+2]; // blue
-        // i+3 is alpha (the fourth element)
-      }
+
+      let usernameStringCounter = usernameString.length - 1;
       // next 10 are for username of sender
-      for (let i = 120, n = 160; i < n; i += 4) {
-        pix[i  ] = 255 - pix[i  ]; // red
-        pix[i+1] = 255 - pix[i+1]; // green
-        pix[i+2] = 255 - pix[i+2]; // blue
-        // i+3 is alpha (the fourth element)
+      for (let i = 0, n = 120; i < n; i += 4) {
+        if (usernameStringCounter >= 0) {
+          if (usernameString[usernameStringCounter] === '1') {
+            pix[i] += 1; // red
+          }
+          usernameStringCounter -= 1;
+        }
+        if (usernameStringCounter >= 0) {
+          if (usernameString[usernameStringCounter] === '1') {
+            pix[i + 1] += 1; // green
+          }
+          usernameStringCounter -= 1;
+        }
+        if (usernameStringCounter >= 0) {
+          if (usernameString[usernameStringCounter] === '1') {
+            pix[i + 2] += 1; // blue
+          }
+          usernameStringCounter -= 1;
+        }
       }
-*/
+
+      let messageString = '';
+      for (let k = 0; k < binaryMessage.length; k++) {
+        for (let j = 0; j < 9; j++) {
+          if (messageString === '') {
+            messageString = binaryMessage[k][j];
+          } else {
+            messageString += binaryMessage[k][j];
+          }
+        }
+      }
+
+      let messageStringCounter = messageString.length - 1;
+      for (let i = 120, n = pix.length; i < n; i += 4) {
+        if (messageStringCounter >= 0) {
+          if (messageString[messageStringCounter] === '1') {
+            pix[i] += 1; // red
+          }
+          messageStringCounter -= 1;
+        }
+        if (messageStringCounter >= 0) {
+          if (messageString[messageStringCounter] === '1') {
+            pix[i + 1] += 1; // green
+          }
+          messageStringCounter -= 1;
+        }
+        if (messageStringCounter >= 0) {
+          if (messageString[messageStringCounter] === '1') {
+            pix[i + 2] += 1; // blue
+          }
+          messageStringCounter -= 1;
+        }
+      }
+
 // Draw the ImageData at the given (x,y) coordinates.
       ctx.putImageData(imgd, 0, 0);
-      //console.log(ctx.getImageData(0, 0, canvas.width, canvas.height));
     }
 
     /** *******************************************
-     * Displaying both the original and the edited
-     * pictures
+     * Displaying both the original picture
      *********************************************/
     let oFReader = new FileReader();
     oFReader.readAsDataURL(document.getElementById('uploadedImage').files[0]);
