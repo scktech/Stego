@@ -2,15 +2,16 @@
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 10px" class="ui container">
 
-      <form class="ui equal width form filter-data-form">
-        <div class="ui left icon input">
-          <input type="text" placeholder="Search users...">
-          <i class="users icon"></i>
-        </div>
-        <button class="ui green button" type="submit">Search</button>
-      </form>
+      <!--<form class="ui equal width form filter-data-form">-->
+        <!--<div class="ui left icon input">-->
+          <!--{{> Text_Form_Control placeholder="Search" value=search }}-->
+          <!--<i class="users icon"></i>-->
+        <!--</div>-->
+        <!--<button class="ui green button" type="submit">Search</button>-->
+      <!--</form>-->
 
       {{> Filter_Page_Directory profiles=profiles }}
+
 
     </div>
   {{/if}}

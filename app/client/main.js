@@ -14,7 +14,6 @@ import '/imports/ui/pages/user';
 import '/imports/ui/pages/encrypt';
 import '/imports/ui/pages/decrypt';
 import '/imports/ui/pages/home';
-import '/imports/ui/pages/find';
 import '/imports/ui/stylesheets/style.css';
 import '/imports/api/base';
 import '/imports/api/profile';
