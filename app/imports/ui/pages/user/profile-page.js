@@ -52,7 +52,7 @@ Template.Profile_Page.events({
     const firstName = event.target.First.value;
     const lastName = event.target.Last.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
-    const title = event.target.Title.value;
+    const title = event.target.Major.value;
     const picture = event.target.Picture.value;
     const bio = event.target.Bio.value;
     const updatedProfileData = { firstName, lastName, title, picture, bio, username };
