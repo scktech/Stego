@@ -2,9 +2,10 @@
 
   {{#if Template.subscriptionsReady}}
 
-  <div class="ui text container segment">
+  <div class="ui two column grid container">
+  <div class="column text container segment">
     <div class="ui dividing header">
-      Profile
+      Edit Profile
     </div>
     <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
 
@@ -13,7 +14,6 @@
         "firstName")}}
         {{> Text_Form_Control label="Last" placeholder="Last Name" value=profile.lastName errorMessage=(fieldError
         "lastName")}}
-
       </div>
 
       <div class="field">
@@ -35,6 +35,13 @@
     </form>
   </div>
 
+    <div class="column">
+      <div class = "ui centered card">
+        <img class="ui fluid centered medium rounded image" src="{{ profile.picture }}">
+      </div>
+    </div>
+
+  </div>
   {{/if}}
 
 </template>

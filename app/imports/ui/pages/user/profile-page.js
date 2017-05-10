@@ -70,8 +70,8 @@ Template.Profile_Page.events({
       instance.messageFlags.set(displaySuccessMessage, id);
       instance.messageFlags.set(displayErrorMessages, false);
     } else {
-      instance.messageFlags.set(displaySuccessMessage, false);
-      instance.messageFlags.set(displayErrorMessages, true);
+      instance.messageFlags.set(displaySuccessMessage, id);
+      instance.messageFlags.set(displayErrorMessages, false);
     }
   },
 });

@@ -1,16 +1,27 @@
 <template name="Landing_Page">
   <head>
-  <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
+    <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
   </head>
 
-  <div class="ui vertical inverted center aligned landing segment" >
-    <div style = "margin-top: 20em; " class = "ui centered text container">
-      <!--<img class="ui fluid image cas-login" src="/images/Brotein_Banner.png">-->
-      <h1 style="font-size: 5em; font-family: 'Lato';">UH STEGO</h1>
-      <div class="ui text container" style="font-family: 'Open Sans'; font-size: 2.5rem; font-style: italic">Hide in plain sight</div>
-      <div style = "margin-top: 2em;" class="text container">
-        {{> Cas_Login size="huge"}}
+  <div class="ui vertical inverted center aligned segment">
+    <div class="ui centered grid" style="margin-top: 250px">
+      <div class="row">
+        <div class="text box"> <h1 style="text-align: center; font-size: 5em; font-family: Lato;">
+          UH STEGO</h1>
+          <p style="text-align: center; margin-top 7em; font-size:2em; width: 600px; font-family: Open Sans;">
+            HIDE IN PLAIN SIGHT
+          </p>
+          <div style = "margin-top: 2em;" class="text container">
+            {{> Cas_Login size="huge"}}
+          </div>
+        </div>
+
       </div>
+
     </div>
   </div>
+
 </template>
+
+<!--We believe in privacy. UH Stego hides your text message in an image of your choice without changing its-->
+<!--appearance. To reveal the secret message, simply upload the image to the decrypt page and hit “decrypt”.-->

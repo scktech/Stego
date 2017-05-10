@@ -45,7 +45,7 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username, title = '', picture = '',  bio = '' }) {
+  define({ firstName = '', lastName = '', username = '', title = '', picture = '',  bio = '' }) {
     // make sure required fields are OK.
     const checkPattern = { firstName: String, lastName: String, username: String, title: String, picture: String,bio: String
       };
@@ -56,8 +56,9 @@ class ProfileCollection extends BaseCollection {
     }
 
     // Throw an error if any of the passed Interest names are not defined.
-    Interests.assertNames(interests);
+    //Interests.assertNames(interests);
     return this._collection.insert({ firstName, lastName, username, title, picture, bio });
+
   }
 
   /**
