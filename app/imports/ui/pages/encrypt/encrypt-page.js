@@ -10,7 +10,6 @@ Template.Encrypt_Page.events({
   'submit .secret-message': function runStego(event, instance) {
     event.preventDefault();
     const secretMessage = $('#secretMessage').val();
-    //const eventId = event.target.eventId.value;
     const username = FlowRouter.getParam('username');
     let binaryMessage = [];
     let binaryUsername = [];
