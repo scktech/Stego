@@ -17,14 +17,13 @@
       </div>
 
       <div class="field">
-        {{> Text_Form_Control label="Title" placeholder="Student" value=profile.title errorMessage=(fieldError
+        {{> Text_Form_Control label="Major" placeholder="Major" value=profile.title errorMessage=(fieldError
         "title")}}
         {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture
         errorMessage=(fieldError "picture")}}
       </div>
 
       {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Hello..." errorMessage=(fieldError "bio")}}
-
 
       <button class="ui green button" type="submit">Submit</button>
       {{#if displaySuccessMessage}}

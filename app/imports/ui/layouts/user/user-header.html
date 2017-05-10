@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
   </head>
+<<<<<<< HEAD
   <div class="ui stackable fixed borderless inverted container menu" style="font-family: Lato; padding-left: 30px; padding-right: 30px">
 
     <a class="{{isActiveRoute " Home_Page"}} item" href="{{pathFor "Home_Page" username=routeUserName}}" st   ><h1>UH STEGO</h1></a>
@@ -36,5 +37,16 @@
     username=routeUserName}}">DECRYPT</a>
 
     <div class="ui right aligned item">{{> Cas_Login }}</div>
+=======
+  <div class="ui fluid top fixed borderless inverted dark gray menu" style="font-family: Lato">
+    <a class="{{isActiveRoute "Home_Page"}} item" href="{{pathFor "Home_Page" username=routeUserName}}">HOME</a>
+    <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">PROFILE</a>
+    <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">FIND USER</a>
+    <a class="{{isActiveRoute "Encrypt_Page"}} item" href="{{pathFor "Encrypt_Page" username=routeUserName}}">ENCRYPT</a>
+    <a class="{{isActiveRoute "Decrypt_Page"}} item" href="{{pathFor "Decrypt_Page" username=routeUserName}}">DECRYPT</a>
+      <div class="ui middle aligned menu item" style="width: 47%; padding-top: 0; padding-bottom: 0"><h1>UH STEGO</h1>
+      </div>
+      <div class="right aligned item">{{> Cas_Login }}</div>
+>>>>>>> Profile-Page-2
   </div>
 </template>
