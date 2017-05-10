@@ -88,8 +88,8 @@
         {
           "firstName": "Sam",
           "lastName": "Rasay",
-          "username": "altenber",
-          "bio": "I am a student at the University of Hawaii.",
+          "username": "samrasay",
+          "bio": "I like turtles.",
           "interests": [
             "Evolutionary Computation"
           ],
@@ -99,8 +99,8 @@
         {
           "firstName": "Connor",
           "lastName": "Slike",
-          "username": "baek",
-          "bio": "I am a student at the University of Hawaii.",
+          "username": "slike",
+          "bio": "I like cats.",
           "interests": [
             "Computer Vision"
           ],
@@ -110,8 +110,8 @@
         {
           "firstName": "Kurt",
           "lastName": "Nikaitani",
-          "username": "esb",
-          "bio": "I am a student at the University of Hawaii.",
+          "username": "kurtkn",
+          "bio": "I like dogs.",
           "interests": [
             "Mobile Networks",
             "Sailing"

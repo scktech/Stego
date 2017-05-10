@@ -9,12 +9,8 @@ Template.Encrypt_Page.events({
 
   'submit .secret-message': function runStego(event, instance) {
     event.preventDefault();
-<<<<<<< HEAD
     const secretMessage = $('#secretMessage').val();
-=======
     //const eventId = event.target.eventId.value;
-    let secretMessage = $("#secretMessage").val();
->>>>>>> origin/master
     const username = FlowRouter.getParam('username');
     let binaryMessage = [];
     let binaryUsername = [];
@@ -173,16 +169,11 @@ Template.Encrypt_Page.events({
       ctx.putImageData(imgd, 0, 0);
     }
 
-<<<<<<< HEAD
     /** *******************************************
      * Displaying both the original picture
      *********************************************/
     let oFReader = new FileReader();
     oFReader.readAsDataURL(document.getElementById('uploadedImage').files[0]);
-=======
-    document.write(binarySecretMessage);
->>>>>>> origin/master
-
     oFReader.onload = function (oFREvent) {
       document.getElementById('uploadedPic').src = oFREvent.target.result;
     };
