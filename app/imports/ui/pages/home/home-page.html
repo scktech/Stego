@@ -1,20 +1,49 @@
 <template name="Home_Page">
   {{#if Template.subscriptionsReady}}
-  <head>
-    <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Open+Sans:italic">
-  </head>
-  <div class="ui vertical inverted center aligned segment">
-    <div class="ui centered grid" style="margin-top: 250px">
-      <div class="row">
-       <div class="text box"> <h1 style="text-align: center; font-size: 3em; font-family: Lato;">
-        HIDE IN PLAIN SIGHT</h1>
-        <p style="text-align: center; margin-top 7em; font-size:1.5em; width: 600px; font-family: Open Sans;">
-          We believe in privacy. UH Stego hides your text message in an image of your choice without changing its
-          appearance. To reveal the secret message, simply upload the image to the decrypt page and hit “decrypt”.
-        </p></div>
+
+  <div style="margin-top: 90px; min-height: 500px" class="ui centered container">
+    <div class="ui header">Hello {{ first }}</div>
+
+    <div class="ui two column grid">
+
+      <div class="twelve wide stretched column">
+        <div class="ui segment">
+          <form class="ui form edit-profile">
+            <div class="field">
+              <label>Name</label>
+              <div class="two fields">
+                <div class="field">
+                  <p>{{profile.firstName}} {{lastName}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+
+              <div class="two fields">
+                <div class="field">
+                  <label>Telephone</label>
+                  <p>{{telephone}}</p>
+                </div>
+                <div class="field">
+                  <label>Email</label>
+                  <p>{{email}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Motto</label>
+              <p>{{motto}}</p>
+            </div>
+            <div class="field">
+              <label>Miscellaneous</label>
+              <p>{{miscellaneous}}</p>
+            </div>
+
+            <img class="right floated mini ui image" src="{{ profile.picture }}">
+          </form>
+        </div>
       </div>
     </div>
   </div>
   {{/if}}
-
 </template>

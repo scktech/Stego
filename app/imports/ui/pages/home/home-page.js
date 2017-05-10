@@ -43,6 +43,9 @@ Template.Profile_Page.helpers({
               return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
             });
   },
+  first: function() {
+    return Profiles.find({},  {firstName: 1 });
+  },
 });
 
 
